@@ -1,0 +1,22 @@
+# Practice what we preach (Part 3 C-6): never commit secrets.
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Common build / dependency artifacts
+node_modules/
+dist/
+build/
+__pycache__/
+*.pyc
+.venv/
