@@ -12,5 +12,6 @@ A 30-second gate before every commit. Full rationale in [../RULES.md](../RULES.m
 - [ ] **Understood** — I can explain *why* this works. (P0-1)
 - [ ] **In scope** — no drive-by rewrites outside the request. (P0-5)
 - [ ] **Tested** — edge and failure paths, not just the happy path. (Part 7)
+- [ ] **Verifiable goal** — success criterion defined and checked (test/build/run), not "looks right." (Part 10)
 
 **Definition of Done:** working ≠ done. Done = works + all boxes above + tested.

@@ -3,7 +3,7 @@
 > Language-agnostic coding standards that guard against the **3 pains of AI / "vibe" coding** — hardcoding, inconsistency, and security holes.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.1.0-brightgreen.svg)](CHANGELOG.md)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-orange.svg)](CONTRIBUTING.md)
 
 ---
@@ -22,7 +22,7 @@ This repo is a **single, enforceable standard** that turns "whatever works right
 
 | File | Purpose |
 |------|---------|
-| **[RULES.md](RULES.md)** | The full standard: Prime Directives, SOLID/DRY/KISS/YAGNI, Clean Code, No-Hardcoding, Security (OWASP), Errors, Refactoring, Testing, Architecture, VCS. |
+| **[RULES.md](RULES.md)** | The full standard: Prime Directives, SOLID/DRY/KISS/YAGNI, Clean Code, No-Hardcoding, Security (OWASP), Errors, Refactoring, Testing, Architecture, VCS, Goal-Driven Execution. |
 | **[checklists/PRE_COMMIT.md](checklists/PRE_COMMIT.md)** | 30-second pre-commit gate. |
 | **[.editorconfig](.editorconfig)** | Enforces basic formatting consistency across editors. |
 | **[CONTRIBUTING.md](CONTRIBUTING.md)** | How to propose changes to the rules. |
@@ -61,6 +61,10 @@ This standard is versioned with [SemVer](https://semver.org/)-style intent:
 - **PATCH** — clarifications, examples, typo fixes.
 
 See [CHANGELOG.md](CHANGELOG.md).
+
+## Credits
+
+The core standard is original. **Part 10 (Goal-Driven Execution)** and the surgical-change refinements (P0-5 / P0-7) were inspired by Andrej Karpathy's observations on common LLM coding mistakes, as packaged in [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills).
 
 ## License
 

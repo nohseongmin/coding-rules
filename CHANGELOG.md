@@ -5,6 +5,19 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the st
 
 ## [Unreleased]
 
+## [1.1.0] — 2026-07-05
+
+### Added
+- **Part 10 — Goal-Driven Execution**: turn vague tasks into verifiable goals ("make it work" → a check that must pass) and loop until they pass; state a one-line plan with a verify step for multi-step work.
+- Pre-commit checklist item for a defined, verifiable success criterion.
+
+### Changed
+- Sharpened **P0-5** (smallest change) with an explicit orphan-cleanup rule: remove only the now-unused code your own change creates; leave pre-existing dead code but mention it.
+- Scoped **P0-7** (Boy Scout Rule) to in-scope smells; surface unrelated smells instead of silently sweeping them into the diff.
+
+### Credits
+- Part 10 and the P0-5/P0-7 refinements draw on Andrej Karpathy's observations on common LLM coding mistakes ([multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)).
+
 ## [1.0.0] — 2026-07-05
 
 ### Added
@@ -24,5 +37,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the st
 - [.editorconfig](.editorconfig) — cross-editor formatting consistency.
 - MIT [LICENSE](LICENSE).
 
-[Unreleased]: https://github.com/nohseongmin/coding-rules/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/nohseongmin/coding-rules/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/nohseongmin/coding-rules/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/nohseongmin/coding-rules/releases/tag/v1.0.0

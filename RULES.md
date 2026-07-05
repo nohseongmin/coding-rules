@@ -1,4 +1,4 @@
-# Coding Standards — Full Reference (v1.0.0)
+# Coding Standards — Full Reference (v1.1.0)
 
 > A language-agnostic engineering standard. Goal: stop the 3 pains of AI/vibe-coding — **hardcoding, inconsistency, security holes** — with rules you can actually follow.
 >
@@ -12,9 +12,9 @@
 - **P0-2 Match the codebase.** New code follows the surrounding naming, structure, patterns, and error-handling style. Consistency > personal taste.
 - **P0-3 No silent hardcoding.** Before baking a literal in, ask: "does this vary by env / user / secret / time?" If yes → constant, config, or argument. (→ Part 3)
 - **P0-4 Never invent secrets or endpoints.** No API keys, URLs, account IDs, or paths in source. Use env/config placeholders. (→ Part 3)
-- **P0-5 Make the smallest change that works.** Don't refactor or rewrite outside the request's scope — propose it separately.
+- **P0-5 Make the smallest change that works.** Every changed line should trace to the request. Don't refactor, reformat, or "improve" adjacent code — propose that separately. Remove only the orphans your own change creates (now-unused imports/vars/functions); leave pre-existing dead code, but mention it.
 - **P0-6 Fail loudly, don't swallow errors.** Log and handle; if unrecoverable, fail clearly. (→ Part 5)
-- **P0-7 Leave it cleaner (Boy Scout Rule).** Fix the small smells you touch; never make a file worse. (→ Part 6)
+- **P0-7 Leave it cleaner, within scope (Boy Scout Rule).** Improve small smells in code you're already changing for the task; for unrelated smells, surface them rather than silently sweeping them into the diff. (→ Part 6)
 - **P0-8 When ambiguous, ask — don't guess.** Wrong assumptions are the #1 source of tech debt.
 
 ---
@@ -202,6 +202,27 @@ GOOD: cur.execute("SELECT * FROM users WHERE id = ?", (uid,))
 - **V-2 Never commit secrets/artifacts.** `.env`, keys, build outputs, large binaries stay gitignored. If leaked, rotate immediately.
 - **V-3 Branch off main; don't push unasked.** Don't commit/push straight to the default branch; push only when asked.
 - **V-4 Review before merge.** Read the diff before merging, even solo. Review generated code especially against this standard.
+
+---
+
+## Part 10 — Goal-Driven Execution
+
+Turn vague tasks into verifiable goals, then loop until they pass. Strong success criteria let an implementer (human or AI) work independently; weak ones ("make it work") force constant back-and-forth.
+
+- **G-1 Define "done" before you start.** State the success check up front. If you can't name how you'll verify it, the task isn't specified yet (→ P0-8).
+- **G-2 Turn tasks into verifiable goals.**
+  - "Add validation" → "Write tests for invalid inputs, then make them pass."
+  - "Fix the bug" → "Write a test that reproduces it, then make it pass."
+  - "Refactor X" → "Keep the same tests green before and after."
+- **G-3 State a brief plan for multi-step work.** One line per step with its check:
+  ```
+  1. [step] → verify: [check]
+  2. [step] → verify: [check]
+  ```
+- **G-4 Loop until verified, then stop.** Run the check, fix, repeat until it passes. Don't declare done on "it looks right" — done means the criterion is met (→ Definition of Done). Don't gold-plate past it (→ Part 1 YAGNI).
+- **G-5 Prefer executable checks.** A test, a build, a run, or an assertion beats "I read it and it seems fine." Automated + repeatable > manual + one-off.
+
+> Part 10 and the surgical-change refinements in P0-5/P0-7 draw on Andrej Karpathy's observations about common LLM coding failure modes (see [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)).
 
 ---
 
