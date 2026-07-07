@@ -5,6 +5,14 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the st
 
 ## [Unreleased]
 
+## [1.2.0] — 2026-07-07
+
+### Added
+- **R-5 Preserve determinism** (Part 6): when refactoring seeded games/simulations, preserve the exact RNG call order and count so a shared seed still reproduces byte-identically; verify by running the same seed twice.
+
+### Notes
+- Distilled from applying the standard across real projects: the recurring real bug was **user data reaching `innerHTML` (XSS)** — reinforced in SEC-2 and now gated in the idea-to-mvp pipeline's pre-commit checklist.
+
 ## [1.1.0] — 2026-07-05
 
 ### Added
@@ -37,6 +45,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the st
 - [.editorconfig](.editorconfig) — cross-editor formatting consistency.
 - MIT [LICENSE](LICENSE).
 
-[Unreleased]: https://github.com/nohseongmin/coding-rules/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/nohseongmin/coding-rules/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/nohseongmin/coding-rules/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/nohseongmin/coding-rules/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/nohseongmin/coding-rules/releases/tag/v1.0.0

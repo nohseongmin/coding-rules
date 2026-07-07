@@ -1,4 +1,4 @@
-# Coding Standards — Full Reference (v1.1.0)
+# Coding Standards — Full Reference (v1.2.0)
 
 > A language-agnostic engineering standard. Goal: stop the 3 pains of AI/vibe-coding — **hardcoding, inconsistency, security holes** — with rules you can actually follow.
 >
@@ -161,6 +161,7 @@ GOOD: cur.execute("SELECT * FROM users WHERE id = ?", (uid,))
 - **R-2 Small, reversible steps.** One thing at a time. Don't mix behavior changes and structure changes in one commit.
 - **R-3 Rule of Three.** Extract on the 3rd duplication.
 - **R-4 Boy Scout Rule.** Fix one small smell as you pass through.
+- **R-5 Preserve determinism.** When refactoring seeded games/simulations, keep the exact RNG call order and count — a shared seed must still reproduce byte-identically. Verify by running the same seed twice. (Real trap: extracting magic numbers or helpers that change RNG consumption silently alters every shared run.)
 
 **Common smells → fix:**
 - God function/class (too many jobs) → split (SRP)
