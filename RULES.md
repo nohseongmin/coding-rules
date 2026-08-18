@@ -237,6 +237,8 @@ Turn vague tasks into verifiable goals, then loop until they pass. Strong succes
 - [ ] Dead code / debug prints / commented-out code removed?
 - [ ] Can I explain *why* I made this change? (P0-1)
 - [ ] No changes outside the requested scope? (P0-5)
+- [ ] Edge and failure paths tested, not just the happy path? (Part 7)
+- [ ] Verifiable goal defined and checked — test/build/run, not "looks right"? (Part 10)
 
 ## Definition of Done
 
