@@ -14,7 +14,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the st
 - **R-5 Preserve determinism** (Part 6): when refactoring seeded games/simulations, preserve the exact RNG call order and count so a shared seed still reproduces byte-identically; verify by running the same seed twice.
 
 ### Notes
-- Distilled from applying the standard across real projects: the recurring real bug was **user data reaching `innerHTML` (XSS)** — reinforced in SEC-2 and now gated in the idea-to-mvp pipeline's pre-commit checklist.
+- Distilled from applying the standard across real projects: the recurring real bug was **user data reaching `innerHTML` (XSS)** — reinforced in SEC-2 and worth gating explicitly in your own project's [pre-commit checklist](checklists/PRE_COMMIT.md).
 
 ## [1.1.0] — 2026-07-05
 
