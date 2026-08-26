@@ -27,6 +27,7 @@ This repo is a **single, enforceable standard** that turns "whatever works right
 | **[.editorconfig](.editorconfig)** | Enforces basic formatting consistency across editors. |
 | **[CONTRIBUTING.md](CONTRIBUTING.md)** | How to propose changes to the rules. |
 | **[CHANGELOG.md](CHANGELOG.md)** | Versioned history of the standard. |
+| **[LICENSE](LICENSE)** | MIT license terms. |
 
 ## The 8 Prime Directives (highest priority)
 
