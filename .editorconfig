@@ -10,8 +10,12 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 2
 
-[*.{py,java,go,rs}]
+[*.{py,java,rs}]
 indent_size = 4
+
+[*.go]
+# Go: gofmt mandates hard tabs — forcing spaces here would fight the toolchain.
+indent_style = tab
 
 [*.md]
 # Markdown: trailing spaces can be meaningful (hard line break)
