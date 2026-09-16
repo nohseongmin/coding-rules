@@ -8,6 +8,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the st
 ### Fixed
 - RULES.md's own Appendix — Pre-Commit Checklist was missing the "Tested" (Part 7) and "Verifiable goal" (Part 10) items already present in [checklists/PRE_COMMIT.md](checklists/PRE_COMMIT.md); the two checklists had drifted apart since Part 10 was added in v1.1.0.
 - `.editorconfig` forced `indent_style = space` on `*.go`, contradicting gofmt (which mandates hard tabs) and the file's own "match the codebase" intent; Go now has its own `indent_style = tab` block.
+- `.editorconfig`'s `[Makefile]` section only matched a file literally named `Makefile`, missing the `makefile`, `GNUmakefile`, and `*.mk` variants `make` also recognizes; those fell back to `indent_style = space`, which breaks make's tab-only recipe lines. The section now matches all four.
 
 ## [1.2.0] — 2026-07-07
 
