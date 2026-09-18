@@ -25,6 +25,7 @@ This repo is a **single, enforceable standard** that turns "whatever works right
 | **[RULES.md](RULES.md)** | The full standard: Prime Directives, SOLID/DRY/KISS/YAGNI, Clean Code, No-Hardcoding, Security (OWASP), Errors, Refactoring, Testing, Architecture, VCS, Goal-Driven Execution. |
 | **[checklists/PRE_COMMIT.md](checklists/PRE_COMMIT.md)** | 30-second pre-commit gate. |
 | **[.editorconfig](.editorconfig)** | Enforces basic formatting consistency across editors. |
+| **[.gitignore](.gitignore)** | Blocks secrets and build artifacts from ever being committed (Part 3 C-6). |
 | **[CONTRIBUTING.md](CONTRIBUTING.md)** | How to propose changes to the rules. |
 | **[CHANGELOG.md](CHANGELOG.md)** | Versioned history of the standard. |
 | **[LICENSE](LICENSE)** | MIT license terms. |
