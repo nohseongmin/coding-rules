@@ -161,7 +161,7 @@ GOOD: cur.execute("SELECT * FROM users WHERE id = ?", (uid,))
 - **R-2 Small, reversible steps.** One thing at a time. Don't mix behavior changes and structure changes in one commit.
 - **R-3 Rule of Three.** Extract on the 3rd duplication.
 - **R-4 Boy Scout Rule.** Fix one small smell as you pass through.
-- **R-5 Preserve determinism.** When refactoring seeded games/simulations, keep the exact RNG call order and count — a shared seed must still reproduce byte-identically. Verify by running the same seed twice. (Real trap: extracting magic numbers or helpers that change RNG consumption silently alters every shared run.)
+- **R-5 Preserve determinism.** When refactoring seeded games/simulations, keep the exact RNG call order and count — a shared seed must still reproduce byte-identically. Capture the output before refactoring, then compare it byte-for-byte with the output after refactoring using the same seed, inputs, and environment. Repeat the post-refactor run to check reproducibility too; two matching new runs alone do not prove that the original behavior was preserved. (Real trap: extracting magic numbers or helpers that change RNG consumption silently alters every shared run.)
 
 **Common smells → fix:**
 - God function/class (too many jobs) → split (SRP)
