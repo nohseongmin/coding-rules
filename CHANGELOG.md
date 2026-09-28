@@ -6,6 +6,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the st
 ## [Unreleased]
 
 ### Fixed
+- RULES.md's secure command example now bounds `ping` execution and checks its exit status, consistent with SEC-11's resource-cap requirement and Part 5's fail-loudly guidance.
 - RULES.md's secure command example now validates the untrusted hostname before passing it to `ping`, consistent with SEC-1's input-validation requirement.
 - RULES.md's R-5 only asked for two runs with the same seed, which could miss a repeatable change in output after refactoring; it now requires a byte-for-byte comparison against the pre-refactor output as well as a repeatability check.
 - README.md's "What's inside" table was missing a row for `.gitignore`, even though it's a shipped file in this repo (and practices Part 3 C-6 itself).
