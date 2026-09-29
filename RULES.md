@@ -139,7 +139,7 @@ BAD:  cur.execute(f"SELECT * FROM users WHERE id = {uid}")     # SQLi
       el.innerHTML = userComment                                # XSS
 GOOD: cur.execute("SELECT * FROM users WHERE id = ?", (uid,))
       host = validate_hostname(userInput)                        # allowlist format/length
-      subprocess.run(["ping", host])                            # no shell
+      subprocess.run(["ping", host], check=True, timeout=PING_TIMEOUT_SECONDS)
       el.textContent = userComment                              # escaped
 ```
 
