@@ -8,7 +8,7 @@ A 30-second gate before every commit. Full rationale in [../RULES.md](../RULES.m
 - [ ] **Errors handled** — nothing swallowed; resources cleaned up; logger not `print`. (Part 5)
 - [ ] **One job per function** — small, intent-revealing names, ≤3 args. (Parts 1–2)
 - [ ] **Consistent** — matches surrounding naming/structure/style. (P0-2)
-- [ ] **Clean** — no dead code, debug prints, or commented-out blocks.
+- [ ] **Clean** — removed only dead code created by this change; no new debug prints or commented-out blocks; reported pre-existing dead code separately. (P0-5)
 - [ ] **Understood** — I can explain *why* this works. (P0-1)
 - [ ] **In scope** — no drive-by rewrites outside the request. (P0-5)
 - [ ] **Tested** — edge and failure paths, not just the happy path. (Part 7)

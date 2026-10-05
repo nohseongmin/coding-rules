@@ -235,7 +235,7 @@ Turn vague tasks into verifiable goals, then loop until they pass. Strong succes
 - [ ] Errors handled/logged, not swallowed? (Part 5)
 - [ ] Each function does one thing? Names reveal intent? (Parts 1–2)
 - [ ] Consistent with surrounding code style? (P0-2)
-- [ ] Dead code / debug prints / commented-out code removed?
+- [ ] Only dead code created by this change removed; no new debug prints / commented-out code; pre-existing dead code reported separately? (P0-5)
 - [ ] Can I explain *why* I made this change? (P0-1)
 - [ ] No changes outside the requested scope? (P0-5)
 - [ ] Edge and failure paths tested, not just the happy path? (Part 7)
