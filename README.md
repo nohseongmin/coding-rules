@@ -45,10 +45,9 @@ Everything else is detail. If you only remember these, you avoid most of the dam
 
 ## How to adopt
 
-**1. With Claude Code (global, auto-applied)** — copy the condensed layer into your user config so every session follows it:
+**1. With Claude Code (global, auto-applied)** — copy [RULES.md](RULES.md) into your user instruction file so every session follows it. If the file already exists, merge the rules into it to preserve your existing instructions:
 ```
-~/.claude/CLAUDE.md        # condensed enforcement layer (auto-loaded)
-~/.claude/CODING_RULES.md  # this repo's RULES.md, for deeper reference
+~/.claude/CLAUDE.md  # this repo's RULES.md (auto-loaded)
 ```
 
 **2. Per repository** — drop `RULES.md` at the repo root and link it from your project's `CLAUDE.md` / `CONTRIBUTING.md` so contributors and agents share one standard.
