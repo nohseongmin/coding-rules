@@ -1,74 +1,49 @@
-# coding-rules
+# Coding Rules
 
-> Language-agnostic coding standards that guard against the **3 pains of AI / "vibe" coding** — hardcoding, inconsistency, and security holes.
+Language-independent standards for maintainable code, including code written with AI assistants. The rules focus on hardcoded configuration, inconsistent implementation, and security defects.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.2.0-brightgreen.svg)](CHANGELOG.md)
-[![PRs welcome](https://img.shields.io/badge/PRs-welcome-orange.svg)](CONTRIBUTING.md)
-
----
-
-## Why this exists
-
-AI-assisted coding is fast, but speed without guardrails produces three recurring failures:
-
-1. **Hardcoding** — secrets, URLs, and magic numbers baked straight into source.
-2. **Inconsistency** — every file written in a different style, impossible to maintain.
-3. **Security holes** — no input validation, string-built SQL, leaked stack traces.
-
-This repo is a **single, enforceable standard** that turns "whatever works right now" into code that stays maintainable, refactorable, and safe — whether a human or an AI wrote it.
-
-## What's inside
+## Files
 
 | File | Purpose |
-|------|---------|
-| **[RULES.md](RULES.md)** | The full standard: Prime Directives, SOLID/DRY/KISS/YAGNI, Clean Code, No-Hardcoding, Security (OWASP), Errors, Refactoring, Testing, Architecture, VCS, Goal-Driven Execution. |
-| **[checklists/PRE_COMMIT.md](checklists/PRE_COMMIT.md)** | 30-second pre-commit gate. |
-| **[.editorconfig](.editorconfig)** | Enforces basic formatting consistency across editors. |
-| **[.gitignore](.gitignore)** | Ignores common secret and build artifact files (Part 3 C-6). |
-| **[CONTRIBUTING.md](CONTRIBUTING.md)** | How to propose changes to the rules. |
-| **[CHANGELOG.md](CHANGELOG.md)** | Versioned history of the standard. |
-| **[LICENSE](LICENSE)** | MIT license terms. |
+|---|---|
+| [RULES.md](RULES.md) | Full standard: design, naming, configuration, security, errors, refactoring, testing, architecture, version control, and execution |
+| [checklists/PRE_COMMIT.md](checklists/PRE_COMMIT.md) | Short pre-commit checklist |
+| [.editorconfig](.editorconfig) | Basic formatting across editors |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | How to propose rule changes |
+| [CHANGELOG.md](CHANGELOG.md) | Version history |
 
-## The 8 Prime Directives (highest priority)
+## Core rules
 
-Everything else is detail. If you only remember these, you avoid most of the damage:
+1. Understand the code before changing it.
+2. Follow the codebase's existing conventions.
+3. Use configuration or arguments for values that vary.
+4. Keep secrets and environment-specific endpoints out of source.
+5. Make the smallest change that meets the requirement.
+6. Handle errors explicitly.
+7. Clean up small issues in code you touch.
+8. Ask when a requirement is ambiguous.
 
-1. **Understand before you write.** If you can't explain why code works, don't ship it.
-2. **Match the codebase.** Consistency beats personal taste.
-3. **No silent hardcoding.** If a value varies by env/user/secret/time → constant, config, or argument.
-4. **Never invent secrets or endpoints.** Use env/config placeholders.
-5. **Smallest change that works.** Propose out-of-scope refactors separately.
-6. **Fail loudly, don't swallow errors.**
-7. **Leave it cleaner (Boy Scout Rule).**
-8. **Ambiguous → ask, don't guess.**
+## Using the standard
 
-## How to adopt
+For global Claude Code instructions, put the condensed rules in your user instructions and keep RULES.md as a deeper reference:
 
-**1. With Claude Code (global, auto-applied)** — copy [RULES.md](RULES.md) into your user instruction file so every session follows it. If the file already exists, merge the rules into it to preserve your existing instructions:
-```
-~/.claude/CLAUDE.md  # this repo's RULES.md (auto-loaded)
+```text
+~/.claude/CLAUDE.md        Condensed instructions, loaded automatically
+~/.claude/CODING_RULES.md  Full RULES.md reference
 ```
 
-**2. Per repository** — drop `RULES.md` at the repo root and link it from your project's `CLAUDE.md` / `CONTRIBUTING.md` so contributors and agents share one standard.
+For a repository, add RULES.md at its root and reference it from the project's CLAUDE.md or CONTRIBUTING.md.
 
-**3. Manually** — read [RULES.md](RULES.md) once, keep [checklists/PRE_COMMIT.md](checklists/PRE_COMMIT.md) next to your terminal.
+For manual use, read [RULES.md](RULES.md) and use [the checklist](checklists/PRE_COMMIT.md) before committing.
 
 ## Versioning
 
-This standard is versioned with [SemVer](https://semver.org/)-style intent:
-- **MAJOR** — a rule is removed or reversed (may require existing code to change).
-- **MINOR** — a new rule or section is added.
-- **PATCH** — clarifications, examples, typo fixes.
-
-See [CHANGELOG.md](CHANGELOG.md).
+Major versions remove or reverse rules. Minor versions add rules or sections. Patch versions clarify wording, examples, or typos.
 
 ## Credits
 
-The core standard is original. **Part 10 (Goal-Driven Execution)** and the surgical-change refinements (P0-5 / P0-7) were inspired by Andrej Karpathy's observations on common LLM coding mistakes, as packaged in [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills).
+The core standard is original. Part 10, Goal-Driven Execution, and the surgical-change guidance in P0-5 and P0-7 were inspired by Andrej Karpathy's observations as collected in [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills).
 
 ## License
 
-[MIT](LICENSE) © Seongmin Noh ([@nohseongmin](https://github.com/nohseongmin))
-
-Use it, fork it, adapt it to your team. Attribution appreciated, not required.
+MIT.
