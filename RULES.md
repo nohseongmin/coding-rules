@@ -81,7 +81,7 @@ Nesting past 3 levels is a refactor signal.
 
 ### Comments
 - Explain **why**, not **what**. Code says what it does; comments capture the *reason*, the trade-off, the gotcha.
-- Delete dead / commented-out code (git remembers).
+- Delete dead / commented-out code created by your change; report pre-existing dead code separately (P0-5).
 - `TODO`s carry context and a condition — never a bare `// TODO fix`.
 
 ### No magic values
@@ -161,7 +161,7 @@ GOOD: cur.execute("SELECT * FROM users WHERE id = ?", (uid,))
 - **R-1 Refactor with a safety net.** Refactor when tests exist; if not, add characterization tests first.
 - **R-2 Small, reversible steps.** One thing at a time. Don't mix behavior changes and structure changes in one commit.
 - **R-3 Rule of Three.** Extract on the 3rd duplication.
-- **R-4 Boy Scout Rule.** Fix one small smell as you pass through.
+- **R-4 Boy Scout Rule.** Fix small smells only in code already being changed for the task; report unrelated smells separately (P0-7).
 - **R-5 Preserve determinism.** When refactoring seeded games/simulations, keep the exact RNG call order and count — a shared seed must still reproduce byte-identically. Capture the output before refactoring, then compare it byte-for-byte with the output after refactoring using the same seed, inputs, and environment. Repeat the post-refactor run to check reproducibility too; two matching new runs alone do not prove that the original behavior was preserved. (Real trap: extracting magic numbers or helpers that change RNG consumption silently alters every shared run.)
 
 **Common smells → fix:**
@@ -172,7 +172,7 @@ GOOD: cur.execute("SELECT * FROM users WHERE id = ?", (uid,))
 - Magic numbers → named constants
 - Feature envy (a function that only touches another object's data) → move it to the data
 - Shotgun surgery (one change needs edits in many places) → redesign for cohesion
-- Dead / commented-out code → delete
+- Dead / commented-out code → delete only leftovers created by your change; report pre-existing dead code separately (P0-5)
 - Primitive obsession (domain modeled as raw strings/ints) → small value objects
 
 ---
