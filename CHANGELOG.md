@@ -7,7 +7,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the st
 
 ### Fixed
 - RULES.md's Part 2 and Part 6 cleanup guidance now limits dead-code deletion to leftovers created by the current change and scopes smell fixes to code already being changed for the task, consistent with P0-5 and P0-7.
-- README.md's global adoption instructions referred to a condensed layer that is not included in this repository; they now use the shipped RULES.md and explain how to preserve existing user instructions.
+- README.md's global adoption instructions referred to a condensed layer that is not included in this repository; they now explain how to copy the shipped RULES.md and append a reference without replacing existing user instructions.
 - Both pre-commit checklists now scope dead-code cleanup to leftovers created by the current change and ask readers to report pre-existing dead code separately, consistent with P0-5.
 - README.md no longer claims `.gitignore` prevents files from ever being committed; it now accurately describes the common secret and build artifact files the repository ignores.
 - RULES.md's secure command example now bounds `ping` execution and checks its exit status, consistent with SEC-11's resource-cap requirement and Part 5's fail-loudly guidance.

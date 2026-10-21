@@ -25,12 +25,13 @@ Language-independent standards for maintainable code, including code written wit
 
 ## Using the standard
 
-For global Claude Code instructions, put the condensed rules in your user instructions and keep RULES.md as a deeper reference:
+For global Claude Code instructions, copy [RULES.md](RULES.md) to `~/.claude/CODING_RULES.md`, then add this reference to `~/.claude/CLAUDE.md`:
 
 ```text
-~/.claude/CLAUDE.md        Condensed instructions, loaded automatically
-~/.claude/CODING_RULES.md  Full RULES.md reference
+Follow the coding standards in ~/.claude/CODING_RULES.md.
 ```
+
+Create `~/.claude/CLAUDE.md` if it does not exist; otherwise, append the reference without replacing existing instructions.
 
 For a repository, add RULES.md at its root and reference it from the project's CLAUDE.md or CONTRIBUTING.md.
 
