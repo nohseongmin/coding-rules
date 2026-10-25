@@ -126,7 +126,7 @@ Focused on where fast-generated code gets breached.
 - **SEC-3 Secrets management.** See Part 3 C-1. A hardcoded key is an immediate incident.
 - **SEC-4 AuthN/AuthZ + least privilege.** Separate authentication from authorization; check *permission* on every sensitive action. Tokens/keys/DB accounts get the minimum privilege.
 - **SEC-5 Secure defaults.** Default to the safest setting. Make risky features opt-in; never make security opt-out.
-- **SEC-6 Don't roll your own crypto.** Use standard libraries. Passwords → slow salted hash (bcrypt/argon2), never MD5/SHA1. Randomness → CSPRNG (`secrets`).
+- **SEC-6 Don't roll your own crypto.** Use standard libraries. Passwords → slow salted hash (bcrypt/argon2), never MD5/SHA1. Security-sensitive randomness → CSPRNG (`secrets`). Seeded PRNGs are for reproducible, non-security simulations/tests (R-5, T-4), never secrets.
 - **SEC-7 Dependencies / supply chain.** Trusted packages only, pinned versions (lockfile), regular vuln scans (`pip-audit` / `npm audit`). Watch for typosquatting.
 - **SEC-8 Don't leak in errors/logs.** No stack traces, internal paths, secrets, or PII to users. Mask secrets/PII in logs too.
 - **SEC-9 Transport & storage.** TLS for external comms; encrypt sensitive data at rest; never disable cert verification (`verify=False`).
