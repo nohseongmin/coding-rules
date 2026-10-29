@@ -98,7 +98,7 @@ Obvious values (0/1/"") and very local literals are fine.
 
 Principle: **code is logic, values are configuration.** "Does this vary by deploy env / user / secret / time?" → if yes, get it out of the code.
 
-- **C-1 Secrets → env / secret manager.** API keys, tokens, passwords, account IDs **never** in source. Use `.env` (gitignored) or a secret manager; code reads `os.environ["X"]` only.
+- **C-1 Secrets → env / secret manager.** API keys, tokens, passwords, account IDs **never** in source. Use `.env` (gitignored) or a secret manager; read secrets from the environment or secret manager.
 - **C-2 Environment-specific → config.** URLs, ports, paths, timeouts, feature toggles come from config/env, not literals.
 - **C-3 Business constants → one named-constants module.** Fees, thresholds, retry counts, periods live in one place with names.
 - **C-4 Twelve-Factor config.** Config lives in the environment; the same build runs in dev/prod with only config changed.

@@ -6,6 +6,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the st
 ## [Unreleased]
 
 ### Fixed
+- RULES.md's C-1 allowed a secret manager but required reading secrets only through Python's `os.environ`; it now permits reading from either the environment or a secret manager, consistent with the language-agnostic scope.
 - RULES.md's SEC-6 required a CSPRNG for all randomness, conflicting with seeded reproducibility in R-5; it now distinguishes security-sensitive randomness from reproducible, non-security simulations/tests.
 - RULES.md's Part 2 and Part 6 cleanup guidance now limits dead-code deletion to leftovers created by the current change and scopes smell fixes to code already being changed for the task, consistent with P0-5 and P0-7.
 - README.md's global adoption instructions referred to a condensed layer that is not included in this repository; they now explain how to copy the shipped RULES.md and append a reference without replacing existing user instructions.
