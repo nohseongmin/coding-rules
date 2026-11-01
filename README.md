@@ -9,6 +9,7 @@ Language-independent standards for maintainable code, including code written wit
 | [RULES.md](RULES.md) | Full standard: design, naming, configuration, security, errors, refactoring, testing, architecture, version control, and execution |
 | [checklists/PRE_COMMIT.md](checklists/PRE_COMMIT.md) | Short pre-commit checklist |
 | [.editorconfig](.editorconfig) | Basic formatting across editors |
+| [.gitignore](.gitignore) | Common secret, editor, and build artifact files ignored by Git |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to propose rule changes |
 | [CHANGELOG.md](CHANGELOG.md) | Version history |
 
